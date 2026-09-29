@@ -1,0 +1,12 @@
+.env
+secrets.h
+node_modules/
+.pio/
+.vscode/
+build/
+dist/
+__pycache__/
+*.pyc
+*.joblib
+*.log
+.DS_Store

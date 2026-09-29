@@ -1,0 +1,113 @@
+@import "tailwindcss";
+
+/* Pure black dark mode theme for the whole website */
+html.dark,
+html.dark body {
+  background-color: #000000 !important;
+  color: #f8fafc;
+}
+
+/* Scoped Black Typography for the PCB Section */
+.pcb-section {
+  color: #000000 !important;
+}
+
+.pcb-section h1,
+.pcb-section h2,
+.pcb-section h3,
+.pcb-section h4,
+.pcb-section p,
+.pcb-section label,
+.pcb-section td,
+.pcb-section th,
+.pcb-section input {
+  color: #000000 !important;
+}
+
+/* Leaflet Custom Marker Resets */
+.leaflet-div-icon.custom-node-marker,
+.leaflet-div-icon.packet-pulse-marker {
+  background: transparent !important;
+  border: none !important;
+}
+
+/* Leaflet Custom Node Popup Styling */
+.custom-leaflet-node-popup .leaflet-popup-content-wrapper {
+  background: #020617 !important;
+  color: #f8fafc !important;
+  border: 1px solid #334155 !important;
+  border-radius: 12px !important;
+  padding: 0 !important;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.6), 0 8px 10px -6px rgba(0, 0, 0, 0.6) !important;
+}
+.custom-leaflet-node-popup .leaflet-popup-content {
+  margin: 0 !important;
+  line-height: inherit !important;
+}
+.custom-leaflet-node-popup .leaflet-popup-tip {
+  background: #020617 !important;
+  border: 1px solid #334155 !important;
+}
+.custom-leaflet-node-popup .leaflet-popup-close-button {
+  color: #94a3b8 !important;
+  padding: 6px !important;
+}
+.custom-leaflet-node-popup .leaflet-popup-close-button:hover {
+  color: #f8fafc !important;
+}
+
+/* ENVORA Overview — Smooth natural page scroll */
+.tw-overview-shell {
+  position: relative;
+  width: 100%;
+}
+
+.tw-overview-region {
+  position: sticky;
+  top: 7rem;
+  z-index: 30;
+  margin-bottom: 16px;
+  backdrop-filter: blur(12px);
+}
+
+.tw-overview-metrics {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-content: center;
+}
+
+@media (min-width: 640px) {
+  .tw-overview-metrics {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .tw-overview-metrics {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: 14px;
+  }
+}
+
+/* Custom subtle scrollbar for horizontal dashboard nav row */
+.nav-scroll-container {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(148, 163, 184, 0.3) transparent;
+}
+
+.nav-scroll-container::-webkit-scrollbar {
+  height: 4px;
+}
+
+.nav-scroll-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.nav-scroll-container::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.25);
+  border-radius: 9999px;
+}
+
+.nav-scroll-container::-webkit-scrollbar-thumb:hover {
+  background: rgba(148, 163, 184, 0.45);
+}

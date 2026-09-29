@@ -1,0 +1,26 @@
+name: CI
+on: [push, pull_request]
+jobs:
+  python-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+      - run: pip install pytest
+      - run: python -m pytest tests
+  firmware-build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        project: [leaf-node, root-node]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11" }
+      - run: pip install platformio
+      - name: Prepare secrets for CI build
+        if: matrix.project == 'root-node'
+        run: cp firmware/root-node/include/secrets.example.h firmware/root-node/include/secrets.h
+      - run: pio run
+        working-directory: firmware/${{ matrix.project }}

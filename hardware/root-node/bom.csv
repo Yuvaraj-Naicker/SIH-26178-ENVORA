@@ -1,0 +1,9 @@
+Reference,Value,Part,Purpose
+U1,ESP32-WROOM,ESP32-WROOM module,MCU
+U2,SX1276,LoRa module,LoRa radio
+U3,BG95-M3,Quectel BG95-M3,NB-IoT modem
+BT1,18650 holder,18650 cell holder,Battery
+U4,CN3065,CN3065,Li-ion/solar charger
+U5,FS8205A,FS8205A,Battery protection
+J1,USB-C,USB-C connector,Charging/programming
+BZ1,Buzzer,Buzzer,Local alert

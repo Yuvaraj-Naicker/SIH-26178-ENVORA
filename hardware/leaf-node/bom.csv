@@ -1,0 +1,5 @@
+Reference,Value,Part,Purpose
+U1,SX1276,LoRa module,LoRa radio
+CN1,Sensor connector,TODO,Sensor interface
+MCU,TODO,TODO,Select MCU
+BAT,TODO,TODO,Replace coin cell
