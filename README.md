@@ -95,10 +95,7 @@ Fill in each point from the problem statement and link to where it is implemente
 - [ ] Deploy trained edge model on root node
 - [ ] Optional: tiny char-level RNN to turn alert packets into readable text
 
-## Team
-| Name | Role |
-|---|---|
-| TODO | TODO |
+
 
 ## License
 Software: MIT. Hardware designs: CERN-OHL-P-2.0 (see [LICENSE](LICENSE)).
