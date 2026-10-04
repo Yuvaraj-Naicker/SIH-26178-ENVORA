@@ -7,19 +7,21 @@ interface ThemeContextType {
 }
 
 const ThemeContext = createContext<ThemeContextType>({
-  isDarkMode: true,
+  isDarkMode: false,
   toggleTheme: () => {},
   setTheme: () => {},
 });
 
 export const ThemeProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  // Default to Dark Mode as shown in the user's template screenshots
+  // Default to Light Mode
   const [isDarkMode, setIsDarkMode] = useState<boolean>(() => {
-    const saved = localStorage.getItem('envora-theme') || localStorage.getItem('terrawatch-theme');
-    return saved ? saved === 'dark' : true;
+    const saved = localStorage.getItem('envora-theme-v2');
+    if (saved) return saved === 'dark';
+    return false; // Default: Light Mode
   });
 
   useEffect(() => {
+    localStorage.setItem('envora-theme-v2', isDarkMode ? 'dark' : 'light');
     localStorage.setItem('envora-theme', isDarkMode ? 'dark' : 'light');
     if (isDarkMode) {
       document.documentElement.classList.add('dark');

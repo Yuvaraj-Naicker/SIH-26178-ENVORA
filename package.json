@@ -1,0 +1,14 @@
+{
+  "name": "sih-26178-envora",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "website"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace=website",
+    "build": "npm run build --workspace=website && rm -rf ./dist && cp -r website/dist ./dist",
+    "preview": "npm run preview --workspace=website",
+    "lint": "npm run lint --workspace=website"
+  }
+}

@@ -20,7 +20,7 @@ function DashboardContent() {
   const { isDarkMode } = useTheme();
 
   // State
-  const [currentLocationId, setCurrentLocationId] = useState<LocationId>('puducherry');
+  const [currentLocationId, setCurrentLocationId] = useState<LocationId>('mumbai');
   const [activeTab, setActiveTab] = useState<NavTabId>('overview');
   const [selectedNode, setSelectedNode] = useState<SensorNode | null>(null);
   const [locationsData, setLocationsData] = useState<Record<string, LocationConfig>>(LOCATIONS);
@@ -152,7 +152,7 @@ function DashboardContent() {
   return (
     <div
       className={`relative min-h-screen flex flex-col font-sans transition-colors duration-200 antialiased ${
-        isDarkMode ? 'bg-black text-slate-100' : 'text-slate-900'
+        isDarkMode ? 'text-slate-100' : 'text-slate-900'
       }`}
     >
       {/* Full Page Background Video without gray shade */}
@@ -170,7 +170,7 @@ function DashboardContent() {
       />
 
       {/* Main Content Area */}
-      <main className="flex-1 max-w-[1700px] w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
+      <main className="relative z-10 flex-1 max-w-[1700px] w-full mx-auto px-4 sm:px-6 lg:px-8 py-6">
         {activeTab === 'overview' && (
           <OverviewView
             location={currentLocation}
@@ -237,7 +237,7 @@ function DashboardContent() {
 
       {/* Professional Status Bar Footer */}
       <footer
-        className={`border-t py-3 text-xs transition-colors ${
+        className={`relative z-10 border-t py-3 text-xs transition-colors ${
           isDarkMode
             ? 'bg-slate-950/80 border-slate-900 text-slate-400'
             : 'bg-white border-slate-200 text-slate-600 shadow-xs'

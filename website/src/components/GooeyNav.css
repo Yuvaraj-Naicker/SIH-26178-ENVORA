@@ -160,6 +160,12 @@
   pointer-events: none;
 }
 
+/* In light mode, disable gooey filter overlay to prevent black box overlap */
+:root:not(.dark) .gooey-nav-container .effect.filter,
+html:not(.dark) .gooey-nav-container .effect.filter {
+  display: none !important;
+}
+
 .gooey-nav-container .effect.filter::before {
   content: '';
   position: absolute;

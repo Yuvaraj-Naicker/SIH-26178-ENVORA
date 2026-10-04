@@ -1,5 +1,12 @@
 @import "tailwindcss";
 
+/* Light mode defaults */
+html,
+body {
+  background-color: #f8fafc;
+  color: #0f172a;
+}
+
 /* Pure black dark mode theme for the whole website */
 html.dark,
 html.dark body {
@@ -64,7 +71,7 @@ html.dark body {
 
 .tw-overview-region {
   position: sticky;
-  top: 7rem;
+  top: 4.5rem;
   z-index: 30;
   margin-bottom: 16px;
   backdrop-filter: blur(12px);
